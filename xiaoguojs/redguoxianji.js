@@ -1,7 +1,7 @@
 var meta = {
   id: "hongguo-xianji",
   name: "红果显季",
-  version: "1.0.0",
+  version: "1.0.1",
   description: "红果短剧：真人剧 / 漫剧 / AI剧，多季按线路展开",
   author: "Aharou",
   type: "video",
@@ -990,6 +990,44 @@ function fetchDetail(sid) {
   }).catch(function () { return {}; });
 }
 
+var appDetailCache = {};
+
+function fetchAppDetail(sid) {
+  var key = String(sid || "");
+  if (!/^\d{5,}$/.test(key)) return Promise.resolve({ vid_list: [], episode_cnt: 0 });
+  var cached = appDetailCache[key];
+  if (cached && Date.now() - cached.time < 15 * 60 * 1000) return Promise.resolve(cached.data);
+  return registerDevice().then(function (device) {
+    var values = {
+      aid: "8662", app_name: "novelread", version_code: "74532", version_name: "7.4.5.32",
+      update_version_code: "74532", manifest_version_code: "74532", os: "android", ssmix: "a",
+      channel: "update_64", device_platform: "android", device_type: "25053RT47C",
+      device_brand: "Redmi", os_version: "16", os_api: "36", ac: "wifi", language: "zh",
+      host_abi: "arm64-v8a", iid: device.install_id, device_id: device.device_id
+    };
+    var body = JSON.stringify({ series_id: key });
+    var signed = signPlaybackV5("https://reading.snssdk.com/novel/player/video_detail/v1/", values, utf8Bytes(body), Date.now());
+    var headers = { "User-Agent": V5_UA, "Accept": "application/json", "Content-Type": "application/json; charset=utf-8" };
+    for (var name in signed.headers) if (Object.prototype.hasOwnProperty.call(signed.headers, name)) headers[name] = signed.headers[name];
+    return fetch(signed.url, { method: "POST", headers: headers, body: body, timeoutMs: 20000 }).then(function (response) {
+      return response.text().then(function (text) {
+        if (response.status !== 200 || !text) throw new Error("EMPTY_RESPONSE");
+        var root = safeJsonParse(text) || {};
+        var vd = (root.data || {}).video_data || {};
+        var list = vd.video_list || [];
+        var vids = [];
+        for (var i = 0; i < list.length; i++) {
+          var v = String(pick(list[i] && list[i].vid, list[i] && list[i].video_id, ""));
+          if (v) vids.push(v);
+        }
+        var out = { vid_list: vids, episode_cnt: Number(vd.episode_cnt || vids.length) || vids.length };
+        if (vids.length) appDetailCache[key] = { data: out, time: Date.now() };
+        return out;
+      });
+    });
+  }).catch(function () { return cached ? cached.data : { vid_list: [], episode_cnt: 0 }; });
+}
+
 function fetchCategory(route, cat, page) {
   var path = "/category/" + route;
   if (cat) path += "/" + cat;
@@ -1399,7 +1437,7 @@ async function seriesSeasons(rawId) {
       vod_pic: absUrl(item.series_cover || ""),
       vod_content: String(item.series_intro || ""),
       vod_episodes: Number(item.episode_cnt || vids.length || 0),
-      vod_remarks: vids.length ? "全" + vids.length + "集" : String(item.episode_right_text || ""),
+      vod_remarks: item.episode_cnt ? "全" + item.episode_cnt + "集" : (vids.length ? "全" + vids.length + "集" : String(item.episode_right_text || "")),
       season: Number(one.no || i + 1),
       playable: true,
       status: ""
@@ -1416,7 +1454,8 @@ async function detail(id) {
     if (found.list && found.list.length) return { list: [found.list[0]] };
     return { list: [] };
   }
-  var vids = (sd.vid_list || []).map(function (value) { return String(value); }).filter(function (value) { return /^\d+$/.test(value); });
+  var appDetail = await fetchAppDetail(sid);
+  var vids = (appDetail.vid_list && appDetail.vid_list.length ? appDetail.vid_list : (sd.vid_list || [])).map(function (value) { return String(value); }).filter(function (value) { return /^\d+$/.test(value); });
   var seasons = await discoverSeasons(sid, sd);
   var lines = [];
   var segments = [];
@@ -1424,11 +1463,14 @@ async function detail(id) {
     var ordered = [];
     for (var i = 0; i < seasons.length; i++) if (String((seasons[i].sd || {}).series_id || "") === sid) ordered.push(seasons[i]);
     for (var j = 0; j < seasons.length; j++) if (String((seasons[j].sd || {}).series_id || "") !== sid) ordered.push(seasons[j]);
+    ordered = ordered.slice(0, 12);
+    var seasonDetails = await Promise.all(ordered.map(function (entry) { return fetchAppDetail((entry.sd || {}).series_id || ""); }));
     var used = {};
     for (var k = 0; k < ordered.length; k++) {
       var one = ordered[k];
       var other = one.sd || {};
-      var evids = (other.vid_list || []).map(function (value) { return String(value); }).filter(function (value) { return /^\d+$/.test(value); });
+      var seasonApp = seasonDetails[k] || { vid_list: [] };
+      var evids = (seasonApp.vid_list && seasonApp.vid_list.length ? seasonApp.vid_list : (other.vid_list || [])).map(function (value) { return String(value); }).filter(function (value) { return /^\d+$/.test(value); });
       if (!evids.length) continue;
       var token = evids.join(",");
       if (used[token]) continue;
