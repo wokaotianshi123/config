@@ -2,15 +2,15 @@
 	"sources": [
 		{
 			"name": "国产剧网",
-			"url": ".\xiaoguojs\volcanoexpo-com.js"
+			"url": ".\volcanoexpo-com.js"
 		},
 				{
 			"name": "官方流红果",
-			"url": ".\xiaoguojs\hongguo.js"
+			"url": ".\hongguo.js"
 		},
 				{
 			"name": "红果显季",
-			"url": ".\xiaoguojs\redguoxianji.js"
+			"url": ".\redguoxianji.js"
 		}
 	]
 }
