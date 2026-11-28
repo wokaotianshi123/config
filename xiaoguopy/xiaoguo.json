@@ -1,8 +1,384 @@
 {
   "sources": [
     {
+      "name": "51X",
+      "url": ".\\51xz.py"
+    },
+    {
+      "name": "6789影视",
+      "url": ".\\6789ysw.py"
+    },
+    {
+      "name": "6789影视",
+      "url": ".\\6789zz.py"
+    },
+    {
+      "name": "🔞ABJAV",
+      "url": ".\\abjav.py"
+    },
+    {
+      "name": "🔞2026短剧AI",
+      "url": ".\\ai2026.py"
+    },
+    {
+      "name": "🔞4K.AI短剧",
+      "url": ".\\ai4k.py"
+    },
+    {
+      "name": "🔞AI短剧AV",
+      "url": ".\\aidj.py"
+    },
+    {
+      "name": "🔞AI短剧网",
+      "url": ".\\aiduanju.py"
+    },
+    {
+      "name": "AIHI",
+      "url": ".\\aihi.py"
+    },
+    {
+      "name": "🔞AiJav",
+      "url": ".\\aijav.py"
+    },
+    {
+      "name": "🔞新黄果短剧",
+      "url": ".\\aimove.py"
+    },
+    {
+      "name": "AiPorn",
+      "url": ".\\aipornx.py"
+    },
+    {
+      "name": "🔞Ai小视频",
+      "url": ".\\aisxpc.py"
+    },
+    {
+      "name": "AI污短剧",
+      "url": ".\\aiwu.py"
+    },
+    {
+      "name": "AI淫航",
+      "url": ".\\aiyinhang.py"
+    },
+    {
+      "name": "咕咚影院",
+      "url": ".\\anet88.py"
+    },
+    {
+      "name": "aosikazy",
+      "url": ".\\aosikazy.py"
+    },
+    {
+      "name": "🔞A色TV",
+      "url": ".\\asextv.py"
+    },
+    {
+      "name": "AVDB",
+      "url": ".\\avdb.py"
+    },
+    {
+      "name": "🔞AVHWA",
+      "url": ".\\avhwa.py"
+    },
+    {
+      "name": "🔞AV Today",
+      "url": ".\\avtoday.py"
+    },
+    {
+      "name": "🔞AV研究院",
+      "url": ".\\avyanjiuyuan.py"
+    },
+    {
+      "name": "🔞八度影院",
+      "url": ".\\badyi.py"
+    },
+    {
+      "name": "baofengzy",
+      "url": ".\\baofengzy.py"
+    },
+    {
+      "name": "奇奇影院",
+      "url": ".\\bufole.py"
+    },
+    {
+      "name": "🔞草榴视频",
+      "url": ".\\caoliu.py"
+    },
+    {
+      "name": "changzhangzy",
+      "url": ".\\changzhangzy.py"
+    },
+    {
+      "name": "潮流AV",
+      "url": ".\\chaoliu.py"
+    },
+    {
+      "name": "🔞中国X站",
+      "url": ".\\chinax.py"
+    },
+    {
+      "name": "🔞中国X站精选",
+      "url": ".\\chinaxselecla08.py"
+    },
+    {
+      "name": "ckzy",
+      "url": ".\\ckzy.py"
+    },
+    {
+      "name": "dadizy",
+      "url": ".\\dadizy.py"
+    },
+    {
+      "name": "🔞大奶Ai短剧",
+      "url": ".\\danai.py"
+    },
+    {
+      "name": "danaizizy",
+      "url": ".\\danaizizy.py"
+    },
+    {
+      "name": "1234影视",
+      "url": ".\\dengtayouqi.py"
+    },
+    {
+      "name": "🔞顶级AI色库",
+      "url": ".\\dingjiaseku.py"
+    },
+    {
+      "name": "🔞69短剧",
+      "url": ".\\dj69.py"
+    },
+    {
+      "name": "91短剧",
+      "url": ".\\dj91.py"
+    },
+    {
+      "name": "短剧窝",
+      "url": ".\\djwo.py"
+    },
+    {
+      "name": "doudouzy",
+      "url": ".\\doudouzy.py"
+    },
+    {
+      "name": "短剧one",
+      "url": ".\\duanjuone.py"
+    },
+    {
+      "name": "多多影视",
+      "url": ".\\duoduo.py"
+    },
+    {
+      "name": "dyttzy",
+      "url": ".\\dyttzy.py"
+    },
+    {
+      "name": "fanhaozy",
+      "url": ".\\fanhaozy.py"
+    },
+    {
+      "name": "feifanzy",
+      "url": ".\\feifanzy.py"
+    },
+    {
+      "name": "飞快TV",
+      "url": ".\\feikuai.py"
+    },
+    {
+      "name": "星空影院",
+      "url": ".\\ffv1.py"
+    },
+    {
+      "name": "AI小视频",
+      "url": ".\\ficeforand.py"
+    },
+    {
+      "name": "妇愁者联盟",
+      "url": ".\\fuchou.py"
+    },
+    {
+      "name": "guangsuzy",
+      "url": ".\\guangsuzy.py"
+    },
+    {
+      "name": "欲望乐园",
+      "url": ".\\guohnsqj.py"
+    },
+    {
+      "name": "80s成全影视网",
+      "url": ".\\hanjuds.py"
+    },
+    {
+      "name": "haohuazy",
+      "url": ".\\haohuazy.py"
+    },
+    {
+      "name": "heiheizy",
+      "url": ".\\heiheizy.py"
+    },
+    {
+      "name": "heiliaozy",
+      "url": ".\\heiliaozy.py"
+    },
+    {
+      "name": "黑桃短剧",
+      "url": ".\\heitao.py"
+    },
+    {
+      "name": "HGhub",
+      "url": ".\\hghub.py"
+    },
+    {
+      "name": "🔞hmav",
+      "url": ".\\hmav.py"
+    },
+    {
       "name": "红果短剧",
       "url": ".\\hongguoxian.py"
+    },
+    {
+      "name": "honglouzy",
+      "url": ".\\honglouzy.py"
+    },
+    {
+      "name": "hongniuzy",
+      "url": ".\\hongniuzy.py"
+    },
+    {
+      "name": "hsckzy",
+      "url": ".\\hsckzy.py"
+    },
+    {
+      "name": "huosuzy",
+      "url": ".\\huosuzy.py"
+    },
+    {
+      "name": "huyazy",
+      "url": ".\\huyazy.py"
+    },
+    {
+      "name": "ikunzy",
+      "url": ".\\ikunzy.py"
+    },
+    {
+      "name": "🔞INSAV",
+      "url": ".\\insav.py"
+    },
+    {
+      "name": "iqiyizy",
+      "url": ".\\iqiyizy.py"
+    },
+    {
+      "name": "JAV目錄大全",
+      "url": ".\\javmenu.py"
+    },
+    {
+      "name": "🔞Javtiful┃JAV视频",
+      "url": ".\\javtiful.py"
+    },
+    {
+      "name": "金果短剧",
+      "url": ".\\jinguo.py"
+    },
+    {
+      "name": "jipinzy",
+      "url": ".\\jipinzy.py"
+    },
+    {
+      "name": "jisuzy",
+      "url": ".\\jisuzy.py"
+    },
+    {
+      "name": "jjzy",
+      "url": ".\\jjzy.py"
+    },
+    {
+      "name": "jkunzy",
+      "url": ".\\jkunzy.py"
+    },
+    {
+      "name": "jp98zy",
+      "url": ".\\jp98zy.py"
+    },
+    {
+      "name": "juliangzy",
+      "url": ".\\juliangzy.py"
+    },
+    {
+      "name": "🔞看裤X",
+      "url": ".\\kankux.py"
+    },
+    {
+      "name": "kuaichezy",
+      "url": ".\\kuaichezy.py"
+    },
+    {
+      "name": "laosepzy",
+      "url": ".\\laosepzy.py"
+    },
+    {
+      "name": "lebozy",
+      "url": ".\\lebozy.py"
+    },
+    {
+      "name": "mangguozy",
+      "url": ".\\mangguozy.py"
+    },
+    {
+      "name": "maoyanzy",
+      "url": ".\\maoyanzy.py"
+    },
+    {
+      "name": "MemoJav",
+      "url": ".\\memojav.py"
+    },
+    {
+      "name": "MissAV",
+      "url": ".\\missav.py"
+    },
+    {
+      "name": "🔞猫咪社区",
+      "url": ".\\mmsq.py"
+    },
+    {
+      "name": "moduzy",
+      "url": ".\\moduzy.py"
+    },
+    {
+      "name": "description",
+      "url": ".\\mtav.py"
+    },
+    {
+      "name": "naixxzy",
+      "url": ".\\naixxzy.py"
+    },
+    {
+      "name": "奶茶影院",
+      "url": ".\\nbsjyy.py"
+    },
+    {
+      "name": "niuniuzy",
+      "url": ".\\niuniuzy.py"
+    },
+    {
+      "name": "nvku",
+      "url": ".\\nvku.py"
+    },
+    {
+      "name": "VS影院",
+      "url": ".\\odselift.py"
+    },
+    {
+      "name": "okzy",
+      "url": ".\\okzy.py"
+    },
+    {
+      "name": "Porn吃瓜网",
+      "url": ".\\porncgw.py"
+    },
+    {
+      "name": "description",
+      "url": ".\\qikantoukan.py"
     }
   ]
 }
